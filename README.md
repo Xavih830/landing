@@ -1,2 +1,2 @@
-# landing
-Proyecto 3: Landing page
+# Proyecto 3
+Landing page
