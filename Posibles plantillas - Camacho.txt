@@ -1,0 +1,6 @@
+Posibles plantillas:
+1. https://themewagon.github.io/Base-Tailwind/
+2. https://themewagon.github.io/startup-nextjs/ (ojo, parece que usa framework distinto Tailwind)
+3. https://themewagon.github.io/FaunaFlora/
+4. https://themewagon.github.io/cryptoflow/
+5. 
