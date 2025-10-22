@@ -1,6 +1,7 @@
 Posibles plantillas:
-1. https://themewagon.github.io/Base-Tailwind/
-2. https://themewagon.github.io/startup-nextjs/ (ojo, parece que usa framework distinto Tailwind)
-3. https://themewagon.github.io/FaunaFlora/
-4. https://themewagon.github.io/cryptoflow/
-5. 
+1. https://themewagon.github.io/Base-Tailwind/ (Se puede escoger, y de hecho es la más viable) (Al final la terminé seleccionando)
+2. https://themewagon.github.io/startup-nextjs/ (tiene React)
+3. https://themewagon.github.io/FaunaFlora/ (No me gusta, demasiadas secciones)
+4. https://themewagon.github.io/cryptoflow/ (Tiene React)
+5. https://themewagon.github.io/landmark/ (No busco esa clase de responsividad con la que cuenta la página)
+
