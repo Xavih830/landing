@@ -8,6 +8,5 @@ const showToast = () => {
 };
 
 (() => {
-    alert("Bienvenido/a");
-    console.log("Bienvenido/a");
+    showToast();
 })();
