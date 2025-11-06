@@ -52,7 +52,7 @@ let renderProducts = () => {
                                             </div>
                                         </div>
                                     </div>`;
-
+                
                 productCard = productCard.replaceAll("[PRODUCT.IMGURL]", product.imgUrl);
                 productCard = productCard.replaceAll("[PRODUCT.TITLE]", product.title.length > 20 ? product.title.substring(0, 20) + "..." : product.title);
                 productCard = productCard.replaceAll("[PRODUCT.PRODUCTURL]", product.productURL);
@@ -61,10 +61,9 @@ let renderProducts = () => {
 
                 container.innerHTML += productCard;
             });
-
+        } else {
+            alert(result.body);
         }
-
-        alert(result.body);
     });
 }
 
