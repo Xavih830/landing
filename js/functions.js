@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 function fetchProducts(url) {
     return fetch(url).then(response => {
         if (!response.ok) {
@@ -12,7 +10,7 @@ function fetchProducts(url) {
     }).then(data => {
         let obj = {
             success: true,
-            body: data.content
+            body: data
         }
 
         return obj;
@@ -26,4 +24,29 @@ function fetchProducts(url) {
     });
 }
 
-export {fetchProducts};
+let fetchCategories = async (url) => {
+    try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+
+        let text = await response.text();
+        const parser = DOMParser();
+        const data = parser.parseFromString(text, "application/xml");
+
+        return {
+            success: true,
+            body: data
+        };
+
+    } catch (error) {
+        return {
+            success: false,
+            body: error.message
+        };
+    }
+}
+
+export {fetchProducts, fetchCategories};

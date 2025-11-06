@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchProducts } from "./functions";
+import { fetchProducts, fetchCategories } from "./functions";
 
 (() => {
     alert("¡Bienvenido a la página!");
@@ -65,10 +65,39 @@ let renderProducts = () => {
             alert(result.body);
         }
     });
+};
+
+let renderCategories = async () => {
+    try {
+        let result = await fetchCategories('https://data-dawm.github.io/datum/reseller/categories.xml');
+        if (result.success){
+            let container = document.getElementById("categories");
+            container.innerHTML = `<option selected disabled>Seleccione una categoría</option>`;
+
+            let categoriesXML = result.body;
+            let categories = categoriesXML.getElementsByTagName("category");
+            console.log(categories);
+
+            for (let category of categories) {
+                let categoryHTML = `<option value="[ID]">[NAME]</option>`;
+                let id = category.getElementsByTagName("id")[0];
+                let name = category.getElementsByTagName("name")[0];
+                console.log(category);
+
+                categoryHTML = categoryHTML.replaceAll("[ID]", id.textContent);
+                categoryHTML = categoryHTML.replaceAll("[NAME]", name.textContent);
+
+                container.innerHTML += categoryHTML;
+            }
+        }
+    } catch (error) {
+        alert(error.message);
+    }
 }
 
 (() => {
     showToast();
     showVideo();
     renderProducts();
-})
+    renderCategories();
+})();
