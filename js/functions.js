@@ -33,7 +33,7 @@ let fetchCategories = async (url) => {
         }
 
         let text = await response.text();
-        const parser = DOMParser();
+        const parser = new DOMParser();
         const data = parser.parseFromString(text, "application/xml");
 
         return {
